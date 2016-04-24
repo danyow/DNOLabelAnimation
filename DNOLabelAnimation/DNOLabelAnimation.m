@@ -136,10 +136,7 @@
             }
         }
         CGFloat trueLocation = weakSelf.animationHeight - location;
-//        if (trueLocation <= 0) {
-//            trueLocation = 0;
-//        }
-        
+
         CGRect trueRect = CGRectMake(x, trueLocation, weakSelf.textSize, weakSelf.textSize);
         NSMutableDictionary *attibutes = [NSMutableDictionary dictionary];
         attibutes[NSFontAttributeName] = weakSelf.font;
