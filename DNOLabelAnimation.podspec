@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DNOLabelAnimation"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "文字label的波浪动画效果"
 
   # This description is used to generate tags and improve search results.
@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
+  s.description  = %{
   					文字label的波浪动画效果 继承自UILabel 有两种效果
-                   DESC
+  }
 
   s.homepage     = "https://github.com/imagons"
   s.screenshots  = "https://github.com/imagons/DNOLabelAnimation/blob/master/1.gif?raw=true"
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   #
 
   s.license      = "MIT"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/imagons/DNOLabelAnimation.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/imagons/DNOLabelAnimation.git", :tag => "v#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,8 +89,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "DNOLabelAnimation", "DNOLabelAnimation/**/*.{h,m}"
-  s.exclude_files = "DNOLabelAnimation/Exclude"
+  s.source_files  = "DNOLabelAnimation/*.{h,m}"
+  #s.exclude_files = "DNOLabelAnimation/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -114,7 +114,9 @@ Pod::Spec.new do |s|
   #  Link your library with frameworks, or libraries. Libraries do not include
   #  the lib prefix of their name.
   #
-
+  s.ios.frameworks = 'Foundation', 'UIKit'
+  s.tvos.frameworks = 'Foundation', 'UIKit'
+  s.osx.frameworks = 'Foundation', 'AppKit'
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
@@ -128,7 +130,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
