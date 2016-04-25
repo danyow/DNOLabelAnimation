@@ -66,3 +66,6 @@ typedef enum {
 @property (nonatomic, assign) NSUInteger rate; // 1 is fastest 10 is slowest, default is 2
 @property (nonatomic, assign) CGFloat    kerning;
 ```
+## 安装
+In your Podfile
+>`pod 'DNOLabelAnimation'`
